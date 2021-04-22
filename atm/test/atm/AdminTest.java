@@ -1,4 +1,4 @@
-package UnitTest;
+package atm;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package UnitTest;
+package atm;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +8,10 @@ class AfterLoginTest {
 
     @Test
     void loadPersons() {
+        AfterLogin al = new AfterLogin();
+        al.loadPersons();
+
+        assertTrue(al.customerlist.size() != 0);
     }
 
     @Test
