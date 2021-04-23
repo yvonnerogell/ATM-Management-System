@@ -14,6 +14,7 @@ public class AfterLogin extends JFrame implements ActionListener
     ArrayList customerlist;
     Admin adm = new Admin();
     String s1;
+    String defaultCustomerRecordFileName = "Customer Record.txt";
     
     AfterLogin()
     {
@@ -65,7 +66,7 @@ public class AfterLogin extends JFrame implements ActionListener
 		
 		try
 		{
-			FileReader fr=new FileReader("Customer Record.txt");
+			FileReader fr=new FileReader(defaultCustomerRecordFileName);
 			BufferedReader br=new BufferedReader(fr);
 			
 
