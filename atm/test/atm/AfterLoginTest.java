@@ -1,7 +1,9 @@
 package atm;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -38,7 +40,16 @@ class AfterLoginTest {
     }
 
     @Test
-    void inquiry() {
+    void inquiryValidPin() {
+
+        AfterLogin test = new AfterLogin();
+
+        AccountData testAccount = new AccountData("1234", "Ken", "Checking", "123456789", "500");
+
+        test.customerlist.add(testAccount);
+
+        Assertions.assertTrue(test.inquiry("1234"));
+
     }
 
     @Test

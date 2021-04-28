@@ -98,7 +98,7 @@ public class AfterLogin extends JFrame implements ActionListener
 
 
 /********************************************************* Balance Enquiry of Customer ************************************/        
-	public void inquiry(String n)
+	public boolean inquiry(String n)
 	{
 		for(int i=0;i<customerlist.size();i++)
 		{
@@ -106,8 +106,12 @@ public class AfterLogin extends JFrame implements ActionListener
 			if(n.equals(atm.pincode))
 			{
 				JOptionPane.showMessageDialog(null,"Welcome to your atm data Mr  ."+atm.customername+"\nYour Total Cash Is : "+atm.startbalance,"WELCOME WELCOME MR  "+atm.customername,JOptionPane.INFORMATION_MESSAGE);
+
+				return true;
 			}
 		}
+
+		return false;
 	}
 /***************************************************************************************************************************/
 
