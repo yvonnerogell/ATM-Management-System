@@ -68,10 +68,24 @@ class AfterLoginTest {
     @Test
     void transfer() {
     }
-
+    
     @Test
-    void withdraw() {
+    void withdrawTest_SufficientFunds() {
+
+        // Arrange
+        AfterLogin test = new AfterLogin();
+
+        AccountData testAccount = new AccountData("1234", "Yvonne", "Checking", "123456789", "500");
+
+        test.customerlist.add(testAccount);
+
+        // Act
+        boolean result = test.withdraw("400");
+
+        // Assert
+        Assertions.assertTrue(result);
     }
+
 
     @Test
     void actionPerformed() {

@@ -160,7 +160,7 @@ public class AfterLogin extends JFrame implements ActionListener
 
 
 /********************************************************* WithDraw Balance ******************************************************/        
-	public void withdraw(String o)
+	public boolean withdraw(String o)
 	{
 		String a,b,c;
 		int d,e,f;
@@ -195,6 +195,7 @@ public class AfterLogin extends JFrame implements ActionListener
                                 ad.savePerson();
 			}
 		}
+		return true;
 	}
 /********************************************************************************************************************************/
 
