@@ -53,6 +53,19 @@ class AfterLoginTest {
     }
 
     @Test
+    void inquiryInvalidPin() {
+
+        AfterLogin test = new AfterLogin();
+
+        AccountData testAccount = new AccountData("1234", "Ken", "Checking", "123456789", "500");
+
+        test.customerlist.add(testAccount);
+
+        Assertions.assertFalse(test.inquiry("12"));
+
+    }
+
+    @Test
     void transfer() {
     }
 
