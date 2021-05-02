@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
 class AfterLoginTest {
+
 
     @Test
     void loadPersonsTest_Valid() {
@@ -41,20 +43,7 @@ class AfterLoginTest {
     }
 
     @Test
-    void inquiryValidPin() {
-
-        AfterLogin test = new AfterLogin();
-
-        AccountData testAccount = new AccountData("1234", "Ken", "Checking", "123456789", "500");
-
-        test.customerlist.add(testAccount);
-
-        Assertions.assertTrue(test.inquiry("1234"));
-
-    }
-
-    @Test
-    void inquiryInvalidPin() {
+    void inquiryTest_InvalidPin() {
 
         AfterLogin test = new AfterLogin();
 
@@ -63,22 +52,6 @@ class AfterLoginTest {
         test.customerlist.add(testAccount);
 
         Assertions.assertFalse(test.inquiry("12"));
-
-    }
-
-    @Test
-    void transfer() {
-
-        // Arrange
-        AfterLogin test = new AfterLogin();
-        AccountData testAccount = new AccountData("1234", "Danni", "Checking", "123456789", "500");
-        test.customerlist.add(testAccount);
-
-        // Act
-        test.transfer("1234");
-
-        // Assert
-        Assertions.assertTrue(test.inquiry("1234"));
 
     }
     
@@ -99,8 +72,20 @@ class AfterLoginTest {
         Assertions.assertTrue(result);
     }
 
-
     @Test
-    void actionPerformed() {
+    void withdrawTest_InsufficientFunds() {
+
+        // Arrange
+        AfterLogin test = new AfterLogin();
+
+        AccountData testAccount = new AccountData("1234", "Yvonne", "Checking", "123456789", "500");
+
+        test.customerlist.add(testAccount);
+
+        // Act
+        boolean result = test.withdraw("600");
+
+        // Assert
+        Assertions.assertFalse(result);
     }
 }

@@ -11,7 +11,7 @@ public class AfterLogin extends JFrame implements ActionListener
     JButton equiryBtn,withdrawBtn,logoutBtn,transferBtn;  
     JLabel atmLab;
     Container con;
-    ArrayList customerlist;
+    ArrayList<AccountData> customerlist;
     Admin adm = new Admin();
     String s1;
     String defaultCustomerRecordFileName = "Customer Record.txt";
@@ -20,7 +20,7 @@ public class AfterLogin extends JFrame implements ActionListener
     {
         
         super("Transaction");
-        customerlist=new ArrayList();
+        customerlist=new ArrayList<AccountData>();
         
         con = this.getContentPane();
         con.setLayout(null);
