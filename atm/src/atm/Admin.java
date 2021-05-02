@@ -24,6 +24,9 @@ public class Admin extends JFrame implements ActionListener
     Container con;
     ArrayList customerlist;
     String s1,s2,s3;
+    String defaultCustomerRecordFileName = "Customer Record.txt";
+    String defaultCustomersRecordFileName = "Customers Record.txt";
+
     Admin()
     {
         super("ADMIN");
@@ -100,10 +103,10 @@ public class Admin extends JFrame implements ActionListener
 			AccountData atm;
 			String line,line1;
 
-			FileWriter fr=new FileWriter("Customer Record.txt");
+			FileWriter fr=new FileWriter(this.getClass().getResource("/" + defaultCustomerRecordFileName).getPath());
 			PrintWriter pw=new PrintWriter(fr);
 
-			FileWriter fr1=new FileWriter("Customers Record.txt");
+			FileWriter fr1=new FileWriter(this.getClass().getResource("/" + defaultCustomersRecordFileName).getPath());
 			PrintWriter pw1=new PrintWriter(fr1);
 
 			pw1.print("PINCODE\t\t\tCUSTOMER NAME\t\t      ACCOUNT TYPE\t\tACCOUNT NUMBER\t\tSTARTING BALANCE\n");	

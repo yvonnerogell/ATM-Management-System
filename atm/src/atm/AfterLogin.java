@@ -66,8 +66,9 @@ public class AfterLogin extends JFrame implements ActionListener
 		
 		try
 		{
-			FileReader fr=new FileReader(defaultCustomerRecordFileName);
-			BufferedReader br=new BufferedReader(fr);
+			InputStreamReader isr = new InputStreamReader(
+					this.getClass().getResourceAsStream("/" + defaultCustomerRecordFileName));
+			BufferedReader br=new BufferedReader(isr);
 			
 
 			String line=br.readLine();	
@@ -86,9 +87,9 @@ public class AfterLogin extends JFrame implements ActionListener
 				line=br.readLine();
 			}
 				br.close();
-				fr.close();
+				isr.close();
 		}
-		catch(IOException ioEX)
+		catch(Exception ioEX)
 		{
 			System.out.println(ioEX);
 		}

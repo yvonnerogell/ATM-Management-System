@@ -12,6 +12,7 @@ class AfterLoginTest {
 
     @Test
     void loadPersonsTest_Valid() {
+
         // Arrange
         AfterLogin al = new AfterLogin();
 
@@ -27,6 +28,7 @@ class AfterLoginTest {
 
         // Arrange
         AfterLogin al = new AfterLogin();
+
         // Need to set to new Arraylist, since the constructor adds a record to the customer list
         al.customerlist = new ArrayList();
         al.defaultCustomerRecordFileName = "this filename does not exist.txt";
@@ -66,6 +68,17 @@ class AfterLoginTest {
 
     @Test
     void transfer() {
+
+        // Arrange
+        AfterLogin test = new AfterLogin();
+        AccountData testAccount = new AccountData("1234", "Danni", "Checking", "123456789", "500");
+        test.customerlist.add(testAccount);
+
+        // Act
+        test.transfer("1234");
+
+        // Assert
+        Assertions.assertTrue(test.inquiry("1234"));
 
     }
     
