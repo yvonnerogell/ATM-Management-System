@@ -71,21 +71,4 @@ class AfterLoginTest {
         // Assert
         Assertions.assertTrue(result);
     }
-
-    @Test
-    void withdrawTest_InsufficientFunds() {
-
-        // Arrange
-        AfterLogin test = new AfterLogin();
-
-        AccountData testAccount = new AccountData("1234", "Yvonne", "Checking", "123456789", "500");
-
-        test.customerlist.add(testAccount);
-
-        // Act
-        boolean result = test.withdraw("600");
-
-        // Assert
-        Assertions.assertFalse(result);
-    }
 }
