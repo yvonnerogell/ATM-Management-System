@@ -1,5 +1,6 @@
 package atm;
 
+import org.junit.Ignore;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -52,6 +53,18 @@ class AfterLoginTest {
         test.customerlist.add(testAccount);
 
         Assertions.assertFalse(test.inquiry("12"));
+
+    }
+
+    @Test
+    @Ignore
+    void inquiryTest_InvalidPinMutant() {
+
+        AfterLogin test = new AfterLogin();
+
+        test.loadPersons();
+
+        Assertions.assertFalse(test.inquiry("123"));
 
     }
     
