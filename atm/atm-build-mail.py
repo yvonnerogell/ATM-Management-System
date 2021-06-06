@@ -15,7 +15,10 @@ from email.mime.text import MIMEText
 # you == recipient's email address
 me = "salve@materiaessentia.com"
 you = "danielle.m.miller@outlook.com"
-pass = "senderpassword"
+password = "senderpassword"
+
+val = input("Enter your email: ")
+you = val
 
 # Create message container - the correct MIME type is multipart/alternative.
 msg = MIMEMultipart('alternative')
